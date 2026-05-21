@@ -30,7 +30,7 @@ $CATEGORIES = [
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 /* ── BANNER SLIDER ── */
-.slider-wrap{position:relative;overflow:hidden;border-radius:12px;background:#f0f0f0;width:100%;height:220px}
+.slider-wrap{position:relative;overflow:hidden;border-radius:12px;background:#f0f0f0;width:100%;aspect-ratio: 21/9; max-height: 380px}
 .slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .slider-track img{width:100%;height:100%;min-width:100%;flex-shrink:0;object-fit:cover;display:block}
 .slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:14px;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.15);transition:.2s;z-index:10}
@@ -104,9 +104,9 @@ $CATEGORIES = [
   <!-- BANNER SLIDER -->
   <div class="slider-wrap mb-20" style="margin-bottom:16px">
     <div class="slider-track" id="track">
-      <img src="banner1.png" alt="Flash Sale">
-      <img src="banner2.png" alt="Gratis Ongkir">
-      <img src="banner3.png" alt="Produk Baru">
+      <img src="banner1.png" alt="Flash Sale" fetchpriority="high">
+      <img src="banner2.png" alt="Gratis Ongkir" loading="lazy">
+      <img src="banner3.png" alt="Produk Baru" loading="lazy">
     </div>
     <button class="slider-btn slider-prev" onclick="slide(-1)"><i class="fas fa-chevron-left"></i></button>
     <button class="slider-btn slider-next" onclick="slide(1)"><i class="fas fa-chevron-right"></i></button>
@@ -149,7 +149,7 @@ $CATEGORIES = [
     <?php foreach($products as $p):?>
     <div class="pc2">
       <?php if(!empty($p['foto_base64'])):?>
-        <img src="<?=$p['foto_base64']?>" class="pc2-img" alt=""
+        <img src="<?=$p['foto_base64']?>" class="pc2-img" alt="" loading="lazy"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="pc2-ph" style="display:none"><i class="fas fa-image"></i></div>
       <?php else:?><div class="pc2-ph"><i class="fas fa-image"></i></div><?php endif;?>

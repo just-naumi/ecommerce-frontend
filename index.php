@@ -19,7 +19,7 @@
     </div>
     <div class="nav-right">
       <a href="login.php" class="nav-logout"><i class="fas fa-sign-in-alt"></i> Masuk</a>
-      <a href="login.php" class="btn-white" style="padding:8px 18px;font-size:13px;border-radius:6px"><i class="fas fa-user-plus"></i> Daftar</a>
+      <a href="register.php" class="btn-white" style="padding:8px 18px;font-size:13px;border-radius:6px"><i class="fas fa-user-plus"></i> Daftar</a>
     </div>
   </div>
 </nav>
@@ -33,7 +33,7 @@
       <p>Temukan jutaan produk dari ribuan penjual terpercaya. Harga terjangkau, pengiriman cepat, transaksi aman.</p>
       <div class="hero-btns">
         <a href="login.php"><button class="btn-white"><i class="fas fa-shopping-bag"></i> Mulai Belanja</button></a>
-        <a href="login.php"><button class="btn-outline-white"><i class="fas fa-store"></i> Jadi Penjual</button></a>
+        <a href="register.php?role=penjual"><button class="btn-outline-white"><i class="fas fa-store"></i> Jadi Penjual</button></a>
       </div>
     </div>
     <div class="hero-img fade-up" style="animation-delay:.2s">
@@ -124,7 +124,7 @@
   <div class="cta-section">
     <h2>🏪 Mulai Berjualan Sekarang!</h2>
     <p>Bergabung dengan ribuan penjual sukses. Tanpa biaya pendaftaran, langsung bisa jualan!</p>
-    <a href="login.php"><button class="btn-white" style="margin:0 auto"><i class="fas fa-store"></i> Daftar sebagai Penjual</button></a>
+    <a href="register.php?role=penjual"><button class="btn-white" style="margin:0 auto"><i class="fas fa-store"></i> Daftar sebagai Penjual</button></a>
   </div>
 </div>
 
