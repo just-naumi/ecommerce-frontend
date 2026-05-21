@@ -69,10 +69,7 @@ if(isset($_POST['login'])){
     <div style="margin-top:16px;text-align:center">
       <a href="index.php" style="color:var(--gray);font-size:12px;text-decoration:none;"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
     </div>
-    <div class="demo-box">
-      <p>🏪 <strong>Penjual:</strong> Naufal / password123</p>
-      <p>🛒 <strong>Pembeli:</strong> Ruth / password123</p>
-    </div>
+
   </div>
 </div>
 </body></html>
