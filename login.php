@@ -4,11 +4,17 @@ $backend_url=getenv('BACKEND_URL')?:'http://backend-service/api.php';
 if(isset($_POST['login'])){
   $ch=curl_init("$backend_url?action=login");
   curl_setopt_array($ch,[CURLOPT_POST=>1,CURLOPT_POSTFIELDS=>http_build_query($_POST),CURLOPT_RETURNTRANSFER=>true]);
-  $res=json_decode(curl_exec($ch),true);curl_close($ch);
-  if(($res['status']??'')=='success'){
+  $response = curl_exec($ch);
+  $res = json_decode($response, true);
+  if (curl_errno($ch)) {
+      $error = 'CURL Error: ' . curl_error($ch);
+  } elseif(($res['status']??'')=='success'){
     $_SESSION['user']=$res['data'];
     header("Location: ".($res['data']['role']=='penjual'?'penjual.php':'pembeli.php'));exit;
-  }else{$error='Username atau password salah!';}
+  }else{
+      $error = $res['message'] ?? 'Username atau password salah! (API Response Empty)';
+  }
+  curl_close($ch);
 }
 ?><!DOCTYPE html>
 <html lang="id">
